@@ -220,8 +220,8 @@ Proyek ini dibuat untuk keperluan akademik - Tugas Akhir Telkom University.
 
 ## 👤 Author
 
-**[Nama Anda]**  
-Teknik Informatika - Telkom University
+Dzaki Endraghani Sunarko  
+S1 Informatika - Telkom University
 
 ---
 

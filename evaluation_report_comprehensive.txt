@@ -1,0 +1,132 @@
+====================================================================================================
+📊 LAPORAN EVALUASI KOMPREHENSIF - ANALISIS SENTIMEN BERITA SAHAM BBCA
+====================================================================================================
+
+📋 INFORMASI DATASET
+----------------------------------------------------------------------------------------------------
+Total Artikel Gemini       : 25 artikel
+Total Artikel OpenAI       : 17 artikel
+Artikel untuk Evaluasi     : 17 artikel (overlap)
+Distribusi Ground Truth    : NEGATIF=10, POSITIF=5, NETRAL=2
+
+🎯 METRIK UTAMA - OVERALL PERFORMANCE
+----------------------------------------------------------------------------------------------------
+Model                Accuracy        Precision       Recall          F1-Score       
+----------------------------------------------------------------------------------------------------
+Gemini 2.5 Flash            88.24%         77.78%         80.00%         78.55%
+OpenAI GPT                  88.24%         83.33%         80.00%         81.58%
+----------------------------------------------------------------------------------------------------
+🏆 WINNER: OpenAI GPT (F1-Score lebih tinggi)
+
+📊 PERFORMA PER KELAS
+----------------------------------------------------------------------------------------------------
+
+🔹 Kelas: POSITIF
+Model                Precision       Recall          F1-Score        Support   
+----------------------------------------------------------------------
+Gemini                      83.33%        100.00%         90.91%         5
+OpenAI                     100.00%        100.00%        100.00%         5
+
+🔹 Kelas: NEGATIF
+Model                Precision       Recall          F1-Score        Support   
+----------------------------------------------------------------------
+Gemini                     100.00%         90.00%         94.74%        10
+OpenAI                     100.00%         90.00%         94.74%        10
+
+🔹 Kelas: NETRAL
+Model                Precision       Recall          F1-Score        Support   
+----------------------------------------------------------------------
+Gemini                      50.00%         50.00%         50.00%         2
+OpenAI                      50.00%         50.00%         50.00%         2
+
+
+✅ METODE VALIDASI - 4 PENDEKATAN
+====================================================================================================
+
+1️⃣  COHEN'S KAPPA - Inter-Rater Agreement
+----------------------------------------------------------------------------------------------------
+   Kappa Score          : 0.7069
+   Interpretasi         : Substantial agreement (0.60 - 0.80)
+   Kesimpulan           : Kedua model SANGAT SEJALAN dalam interpretasi sentimen
+
+2️⃣  STRATIFIED ANALYSIS - Agreed vs Disagreed Articles
+----------------------------------------------------------------------------------------------------
+   Total Artikel                    : 17
+   Artikel Agreed (kedua setuju)    : 14 (82.4%)
+   Artikel Disagreed (berbeda)      : 3 (17.6%)
+
+   Performa pada Agreed Articles:
+      - Gemini Accuracy             : 100.00%
+      - OpenAI Accuracy             : 100.00%
+   Performa pada Disagreed Articles:
+      - Gemini Accuracy             : 33.33%
+      - OpenAI Accuracy             : 33.33%
+
+3️⃣  CONFIDENCE CALIBRATION - Correlation Analysis
+----------------------------------------------------------------------------------------------------
+   Gemini 2.5 Flash:
+      - Confidence-Accuracy Correlation : r = 0.6583
+      - Status                          : ✅ BAIK (model tahu kapan prediksi benar)
+      - SEDANG : Accuracy  50.0% (n=4)
+      - TINGGI : Accuracy 100.0% (n=13)
+
+   OpenAI GPT:
+      - Confidence-Accuracy Correlation : r = 0.1257
+      - Status                          : ⚠️  LEMAH (confidence kurang reliable)
+      - RENDAH : Accuracy 100.0% (n=1)
+      - SEDANG : Accuracy  83.3% (n=12)
+      - TINGGI : Accuracy 100.0% (n=4)
+
+4️⃣  BOOTSTRAP CONFIDENCE INTERVALS (95% CI)
+----------------------------------------------------------------------------------------------------
+   Gemini 2.5 Flash:
+      - Mean Accuracy      : 88.58%
+      - 95% CI             : [70.59% - 100.00%]
+
+   OpenAI GPT:
+      - Mean Accuracy      : 88.13%
+      - 95% CI             : [70.59% - 100.00%]
+
+   Kesimpulan           : Confidence intervals OVERLAP → tidak ada perbedaan signifikan
+
+
+🎯 KESIMPULAN AKHIR
+====================================================================================================
+
+✅ PERFORMA MODEL:
+   • Kedua model menunjukkan performa SETARA secara statistik (~88% accuracy)
+   • Tidak ada perbedaan signifikan berdasarkan bootstrap confidence intervals
+   • Cohen's Kappa 0.707 menunjukkan substantial agreement antar model
+
+💡 KEUNGGULAN MASING-MASING:
+   Gemini 2.5 Flash:
+   • Calibration lebih baik (r=0.658) - model tahu kapan prediksinya benar
+   • Confidence score lebih reliable untuk decision making
+
+   OpenAI GPT:
+   • Precision lebih tinggi (83.33% vs 77.78%)
+   • F1-Score sedikit lebih baik (81.58% vs 78.55%)
+   • Perfect precision untuk kelas POSITIF (100%)
+
+⚠️  LIMITASI EVALUASI:
+   • Ground truth berbasis consensus (bukan expert independent)
+   • Dataset relatif kecil (17 artikel overlap)
+   • Class imbalance: NETRAL hanya 2 samples
+   • Belum ada validasi eksternal atau A/B testing
+
+🚀 REKOMENDASI DEPLOYMENT:
+   1. Jika prioritas: Reliability & Calibration → Deploy Gemini 2.5 Flash
+   2. Jika prioritas: Precision & F1-Score → Deploy OpenAI GPT
+   3. Untuk produksi optimal → Gunakan ENSEMBLE (voting kedua model)
+
+📋 NEXT STEPS:
+   • Kumpulkan 50-100 artikel dengan expert manual labeling
+   • Hitung inter-rater reliability (Fleiss' Kappa)
+   • Re-evaluate dengan independent gold standard
+   • Lakukan A/B testing di production environment
+   • Monitor dan re-evaluate setiap 3-6 bulan
+
+====================================================================================================
+📅 Tanggal Evaluasi: November 22, 2025
+🔬 Metodologi: 4-Method Comprehensive Validation
+====================================================================================================

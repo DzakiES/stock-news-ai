@@ -1,0 +1,155 @@
+{
+  "evaluation_date": "2025-11-22T16:46:54.151951",
+  "dataset_info": {
+    "total_articles": 17,
+    "ground_truth_distribution": {
+      "NEGATIF": 9,
+      "POSITIF": 6,
+      "NETRAL": 2
+    }
+  },
+  "gemini_performance": {
+    "accuracy": 1.0,
+    "detailed_metrics": [
+      {
+        "Class": "POSITIF",
+        "Precision": 1.0,
+        "Recall": 1.0,
+        "F1-Score": 1.0,
+        "Support": 6
+      },
+      {
+        "Class": "NEGATIF",
+        "Precision": 1.0,
+        "Recall": 1.0,
+        "F1-Score": 1.0,
+        "Support": 9
+      },
+      {
+        "Class": "NETRAL",
+        "Precision": 1.0,
+        "Recall": 1.0,
+        "F1-Score": 1.0,
+        "Support": 2
+      },
+      {
+        "Class": "Macro Avg",
+        "Precision": 1.0,
+        "Recall": 1.0,
+        "F1-Score": 1.0,
+        "Support": 17
+      },
+      {
+        "Class": "Weighted Avg",
+        "Precision": 1.0,
+        "Recall": 1.0,
+        "F1-Score": 1.0,
+        "Support": 17
+      }
+    ],
+    "confusion_matrix": [
+      [
+        6,
+        0,
+        0
+      ],
+      [
+        0,
+        9,
+        0
+      ],
+      [
+        0,
+        0,
+        2
+      ]
+    ]
+  },
+  "openai_performance": {
+    "accuracy": 0.8235294117647058,
+    "detailed_metrics": [
+      {
+        "Class": "POSITIF",
+        "Precision": 1.0,
+        "Recall": 0.8333333333333334,
+        "F1-Score": 0.9090909090909091,
+        "Support": 6
+      },
+      {
+        "Class": "NEGATIF",
+        "Precision": 0.8888888888888888,
+        "Recall": 0.8888888888888888,
+        "F1-Score": 0.8888888888888888,
+        "Support": 9
+      },
+      {
+        "Class": "NETRAL",
+        "Precision": 0.5,
+        "Recall": 0.5,
+        "F1-Score": 0.5,
+        "Support": 2
+      },
+      {
+        "Class": "Macro Avg",
+        "Precision": 0.7962962962962963,
+        "Recall": 0.7407407407407408,
+        "F1-Score": 0.765993265993266,
+        "Support": 17
+      },
+      {
+        "Class": "Weighted Avg",
+        "Precision": 0.8823529411764706,
+        "Recall": 0.8235294117647058,
+        "F1-Score": 0.8502673796791443,
+        "Support": 17
+      }
+    ],
+    "confusion_matrix": [
+      [
+        5,
+        0,
+        0
+      ],
+      [
+        0,
+        8,
+        1
+      ],
+      [
+        0,
+        1,
+        1
+      ]
+    ]
+  },
+  "comparison": [
+    {
+      "Metric": "Accuracy",
+      "Gemini": 1.0,
+      "OpenAI": 0.625,
+      "Difference": 0.375,
+      "Winner": "Gemini"
+    },
+    {
+      "Metric": "Precision (Macro)",
+      "Gemini": 1.0,
+      "OpenAI": 0.5,
+      "Difference": 0.5,
+      "Winner": "Gemini"
+    },
+    {
+      "Metric": "Recall (Macro)",
+      "Gemini": 1.0,
+      "OpenAI": 0.5833333333333334,
+      "Difference": 0.41666666666666663,
+      "Winner": "Gemini"
+    },
+    {
+      "Metric": "F1-Score (Macro)",
+      "Gemini": 1.0,
+      "OpenAI": 0.5079365079365079,
+      "Difference": 0.4920634920634921,
+      "Winner": "Gemini"
+    }
+  ]
+}

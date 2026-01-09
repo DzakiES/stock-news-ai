@@ -1,0 +1,154 @@
+{
+  "evaluation_date": "2025-11-22T14:50:38.805088",
+  "dataset_info": {
+    "total_articles": 4,
+    "ground_truth_distribution": {
+      "NEGATIF": 2,
+      "POSITIF": 2
+    }
+  },
+  "gemini_performance": {
+    "accuracy": 1.0,
+    "detailed_metrics": [
+      {
+        "Class": "POSITIF",
+        "Precision": 1.0,
+        "Recall": 1.0,
+        "F1-Score": 1.0,
+        "Support": 2
+      },
+      {
+        "Class": "NEGATIF",
+        "Precision": 1.0,
+        "Recall": 1.0,
+        "F1-Score": 1.0,
+        "Support": 2
+      },
+      {
+        "Class": "NETRAL",
+        "Precision": 0.0,
+        "Recall": 0.0,
+        "F1-Score": 0.0,
+        "Support": 0
+      },
+      {
+        "Class": "Macro Avg",
+        "Precision": 0.6666666666666666,
+        "Recall": 0.6666666666666666,
+        "F1-Score": 0.6666666666666666,
+        "Support": 4
+      },
+      {
+        "Class": "Weighted Avg",
+        "Precision": 1.0,
+        "Recall": 1.0,
+        "F1-Score": 1.0,
+        "Support": 4
+      }
+    ],
+    "confusion_matrix": [
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  "openai_performance": {
+    "accuracy": 1.0,
+    "detailed_metrics": [
+      {
+        "Class": "POSITIF",
+        "Precision": 1.0,
+        "Recall": 1.0,
+        "F1-Score": 1.0,
+        "Support": 2
+      },
+      {
+        "Class": "NEGATIF",
+        "Precision": 1.0,
+        "Recall": 1.0,
+        "F1-Score": 1.0,
+        "Support": 2
+      },
+      {
+        "Class": "NETRAL",
+        "Precision": 0.0,
+        "Recall": 0.0,
+        "F1-Score": 0.0,
+        "Support": 0
+      },
+      {
+        "Class": "Macro Avg",
+        "Precision": 0.6666666666666666,
+        "Recall": 0.6666666666666666,
+        "F1-Score": 0.6666666666666666,
+        "Support": 4
+      },
+      {
+        "Class": "Weighted Avg",
+        "Precision": 1.0,
+        "Recall": 1.0,
+        "F1-Score": 1.0,
+        "Support": 4
+      }
+    ],
+    "confusion_matrix": [
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  "comparison": [
+    {
+      "Metric": "Accuracy",
+      "Gemini": 1.0,
+      "OpenAI": 1.0,
+      "Difference": 0.0,
+      "Winner": "Tie"
+    },
+    {
+      "Metric": "Precision (Macro)",
+      "Gemini": 0.6666666666666666,
+      "OpenAI": 0.6666666666666666,
+      "Difference": 0.0,
+      "Winner": "Tie"
+    },
+    {
+      "Metric": "Recall (Macro)",
+      "Gemini": 0.6666666666666666,
+      "OpenAI": 0.6666666666666666,
+      "Difference": 0.0,
+      "Winner": "Tie"
+    },
+    {
+      "Metric": "F1-Score (Macro)",
+      "Gemini": 0.6666666666666666,
+      "OpenAI": 0.6666666666666666,
+      "Difference": 0.0,
+      "Winner": "Tie"
+    }
+  ]
+}
